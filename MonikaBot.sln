@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonikaBot", "MonikaBot\MonikaBot.csproj", "{E77C1CE3-AB06-4586-B73C-6A7D9E40468A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E77C1CE3-AB06-4586-B73C-6A7D9E40468A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E77C1CE3-AB06-4586-B73C-6A7D9E40468A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E77C1CE3-AB06-4586-B73C-6A7D9E40468A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E77C1CE3-AB06-4586-B73C-6A7D9E40468A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1F08A9EA-5A95-4DE3-B849-AA278D54BC9D}
+	EndGlobalSection
+EndGlobal
