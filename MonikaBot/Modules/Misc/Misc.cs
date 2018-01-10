@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace MonikaBot.Modules
 {
-    public class Misc : ModuleBase<SocketCommandContext>
+    public class MiscModule : ModuleBase<SocketCommandContext>
     {
         private CommandService _service;
         public string prefix = "!";
 
-        public Misc(CommandService service)
+        public MiscModule(CommandService service)
         {
             _service = service;
             prefix = Services.Settings.LoadFile().Prefix;

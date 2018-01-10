@@ -11,6 +11,7 @@ using Discord.Commands;
 using Discord.WebSocket;
 
 using Microsoft.Extensions.DependencyInjection;
+using MonikaBot.Modules.Audio.Services;
 using MonikaBot.Services;
 using Newtonsoft.Json;
 
@@ -23,8 +24,8 @@ namespace MonikaBot
         private Random _random;
         private Settings _settings;
         private DiscordSocketClient _client; //connection to discord
+        private AudioService _audioService;
         private CommandService _commands;
-        
         private IServiceProvider _services;
 
         public async Task RunBotAsync()
@@ -38,6 +39,7 @@ namespace MonikaBot
             });
 
             _commands = new CommandService();
+            _audioService = new AudioService();
             _services = new ServiceCollection()
                 .AddSingleton(_client)
                 .AddSingleton(_commands)
@@ -49,7 +51,7 @@ namespace MonikaBot
 
             //event subscriptions
             _client.Log += Log;
-
+            _client.Ready += Run;
             //Register command handling
             await RegisterCommandsAsync();
 
@@ -58,6 +60,7 @@ namespace MonikaBot
                 await _client.LoginAsync(TokenType.Bot, botToken);
                 await _client.StartAsync();
                 await _client.SetGameAsync("Just Monika");
+
             }
             catch (Exception e)
             {
@@ -107,13 +110,20 @@ namespace MonikaBot
             }
         }
 
+        [Command("", RunMode = RunMode.Async)]
         private async Task Run()
         {
             //while (true)
             //{
-            //    Console.WriteLine(_client.GetGuild(0).Name);
-            //    await Task.Delay(_random.Next(50, 100));
-            //
+            foreach (var guild in _client.Guilds)
+            {
+                Console.WriteLine(guild);
+                await Task.CompletedTask;
+                // await guild.DefaultChannel.SendMessageAsync("Just monika");
+            }
+
+            //Console.WriteLine(_client.GetGuild(0).Name);
+            //await Task.Delay(_random.Next(50, 100) * 10000);
             //}
         }
 

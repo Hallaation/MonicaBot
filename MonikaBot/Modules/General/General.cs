@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MonikaBot.Modules
 {
-    public class General : ModuleBase<SocketCommandContext>
+    public class GeneralModule : ModuleBase<SocketCommandContext>
     {
         [Command("Ping")]
         public async Task PingAsync()

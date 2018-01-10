@@ -136,14 +136,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Modules\Misc.cs" />
+    <Compile Include="Modules\Audio\Services\AudioService.cs" />
+    <Compile Include="Modules\Misc\Misc.cs" />
     <Compile Include="Services\Settings.cs" />
-    <Compile Include="Modules\General.cs" />
+    <Compile Include="Modules\General\General.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Compile Include="Modules\Audio\Audio.cs" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
