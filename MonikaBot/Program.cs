@@ -48,10 +48,10 @@ namespace MonikaBot
 
             //event subscriptions
             _client.Log += Log;
-
             //Register command handling
             await _services.GetRequiredService<StartupService>().StartAsync(); //setup starting up bot
             _services.GetRequiredService<CommandHandler>(); //setup command handler
+
             await Task.Delay(-1);
         }
 

@@ -15,6 +15,7 @@ namespace MonikaBot.Modules
 
         public Misc(CommandService service)
         {
+            Console.WriteLine("Misc constructor");
             _service = service;
             prefix = Services.Settings.LoadFile().Prefix;
         }

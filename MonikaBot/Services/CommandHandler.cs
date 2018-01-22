@@ -26,6 +26,7 @@ namespace MonikaBot.Services
             _services = services;
 
             _client.MessageReceived += HandleCommandsAsync;
+            
         }
 
         public async Task HandleCommandsAsync(SocketMessage arg)
@@ -46,10 +47,21 @@ namespace MonikaBot.Services
 
                 if (!result.IsSuccess)
                 {
-                    Console.WriteLine(context.Message);
                     Console.WriteLine(result.ErrorReason);
                 }
             }
+#if DEBUG
+            else //handle the command regardless debug only
+            {
+                var context = new SocketCommandContext(_client, message);
+
+                var result = await _commands.ExecuteAsync(context, argPos, _services);
+                if (!result.IsSuccess)
+                {
+                    Console.WriteLine(result.ErrorReason);
+                }
+            }
+#endif
         }
     }
 }
