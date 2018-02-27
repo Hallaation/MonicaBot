@@ -11,16 +11,14 @@ using System.Threading.Tasks;
 namespace MonikaBot.Modules.Control
 {
 
-    public class VoiceControl : ModuleBase<SocketCommandContext>
+    public class VoiceControl : BaseModule
     {
         //Define constants
-        private readonly DiscordSocketClient _client;
-
         private Dictionary<ulong, SocketVoiceChannel> userLockedChannels = new Dictionary<ulong, SocketVoiceChannel>();
 
         public VoiceControl(DiscordSocketClient client)
+            : base(client)
         {
-            _client = client;
         }
         public async Task ExecuteAsync()
         {

@@ -26,7 +26,6 @@ namespace MonikaBot.Services
             _services = services;
 
             _client.MessageReceived += HandleCommandsAsync;
-            
         }
 
         public async Task HandleCommandsAsync(SocketMessage arg)

@@ -136,8 +136,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modules\BaseModule.cs" />
     <Compile Include="Modules\Control\VoiceControl.cs" />
     <Compile Include="Modules\Misc.cs" />
+    <Compile Include="Modules\UserLevels\UserLevels.cs" />
     <Compile Include="Services\CommandHandler.cs" />
     <Compile Include="Services\Settings.cs" />
     <Compile Include="Modules\General.cs" />

@@ -30,6 +30,7 @@ namespace MonikaBot.Services
             await _client.StartAsync();
 
             await _commands.AddModulesAsync(Assembly.GetEntryAssembly()); //load modules
+            
         }
     }
 }

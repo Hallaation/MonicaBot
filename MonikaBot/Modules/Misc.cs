@@ -1,5 +1,6 @@
 ﻿using Discord;
 using Discord.Commands;
+using Discord.WebSocket;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,23 +9,17 @@ using System.Threading.Tasks;
 
 namespace MonikaBot.Modules
 {
-    public class Misc : ModuleBase<SocketCommandContext>
+    public class Misc : BaseModule
     {
-        private CommandService _service;
+        public Misc(DiscordSocketClient client, CommandService service)
+            : base(client, service) { }
+
         public string prefix = "!";
 
-        public Misc(CommandService service)
-        {
-            Console.WriteLine("Misc constructor");
-            _service = service;
-            prefix = Services.Settings.LoadFile().Prefix;
-        }
-
- 
         [Command("Help")]
         public async Task HelpAsync()
         {
-            
+            await ReplyAsync(_client.CurrentUser.Username);
             var dmChanenl = await Context.User.GetOrCreateDMChannelAsync();
 
             var builder = new EmbedBuilder()
