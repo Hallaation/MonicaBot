@@ -37,6 +37,28 @@ namespace MonikaBot.Modules.Control
             await Task.CompletedTask;
         }
 
+        //Move member command to move members from one voice channel to another
+        //Lets hope the socketvoicechannel can take an ID as a source and target channel
+        [Command("MoveMembers", RunMode = RunMode.Async)]
+        public async Task MoveMembers([Remainder] IVoiceChannel targetChannel)
+        {
+            //Get the user the command caller is in
+            IReadOnlyCollection<SocketGuildUser> users = Context.Guild.GetUser(Context.User.Id).VoiceChannel.Users;
+            foreach (var user in users)
+            {
+                
+            }
+        }
+
+        //Should test if overloaded functions with commands work. but this should work theoretically
+        [Command("MoveMembers", RunMode = RunMode.AsyncS)]
+        public async Task MoveMembers(IVoiceChannel sourceChannel, IVoiceChannel targetChannel)
+        {
+
+
+        }
+
+
         /*
         //disable this command to be sure.
         //[Command("RequestVoice", RunMode = RunMode.Async)]
