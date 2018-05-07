@@ -25,7 +25,7 @@ namespace MonikaBot.Modules
 
         protected override void BeforeExecute(CommandInfo command)
         {
-            ReplyAsync("WAit what");
+
         }
     }
 }

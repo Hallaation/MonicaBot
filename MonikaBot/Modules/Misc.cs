@@ -54,6 +54,19 @@ namespace MonikaBot.Modules
             await dmChanenl.SendMessageAsync("", false, builder.Build());
         }
 
+
+        [RequireContext(ContextType.Guild)]
+        public async Task Thisisatest([Remainder]IUser user = null)
+        {
+            if (!Context.User.IsBot)
+            {
+                await ReplyAsync("Hello World");
+            }
+        }
+
     }
+
+
+
 
 }
